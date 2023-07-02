@@ -1,0 +1,17 @@
+body {
+    padding: 50px;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+.btn {
+    margin-top: 10px;
+}

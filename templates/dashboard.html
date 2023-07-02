@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, {{ session['username'] }}</h1>
+        <h2>Your Missing Persons</h2>
+        <ul class="list-group">
+            {% for missing_person in missing_persons %}
+            <li class="list-group-item">
+                <h3>{{ missing_person['name'] }}</h3>
+                <p>{{ missing_person['description'] }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('add') }}" class="btn btn-primary mt-3">Add Missing Person</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3">Logout</a>
+    </div>
+</body>
+</html>
